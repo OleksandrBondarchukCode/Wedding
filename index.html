@@ -21,20 +21,19 @@
           padding: 1rem;
         }
 
-     .section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;       /* додано для горизонтального центрування */
-  text-align: center;        /* текст всередині центрований */
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
-  padding: 2rem 1rem;
-  border-bottom: 1px solid #ddd;
-}
-
+        .section {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          opacity: 0;
+          transform: translateY(40px);
+          transition: opacity 1s ease, transform 1s ease;
+          padding: 2rem 1rem;
+          border-bottom: 1px solid #ddd;
+        }
 
         .section.visible {
           opacity: 1;
@@ -64,7 +63,7 @@
 <body>
 <header class="section">
     <h1>Ми одружуємось</h1>
-    <p>Ім’я & Ім’я</p>
+    <p>Олена & Константин</p>
 </header>
 
 <section class="section">
@@ -75,7 +74,6 @@
 <section class="section">
     <h2>Де і коли</h2>
     <p>Місце проведення, дата, час.</p>
-    <a href="#" class="button">Переглянути на карті</a>
 </section>
 
 <section class="section">
@@ -85,18 +83,6 @@
         <li>18:00 — Вечеря</li>
         <li>20:00 — Танці</li>
     </ul>
-</section>
-
-<section class="section">
-    <h2>Dress Code</h2>
-    <p>Світлі, ніжні тони. Без джинсів :)</p>
-</section>
-
-<section class="section">
-    <h2>RSVP</h2>
-    <a href="tg://resolve?domain=Valcornus&text=Я%20буду%20на%20весіллі%20💌" class="button">
-        Я буду 💌
-    </a>
 </section>
 
 <footer class="section">
