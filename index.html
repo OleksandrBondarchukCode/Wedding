@@ -13,12 +13,10 @@
 
         body {
           font-family: sans-serif;
-          background: linear-gradient(180deg, #f5deb3 0%, #c49e6c 100%);
           color: #333;
           line-height: 1.6;
           overflow-x: hidden;
           scroll-behavior: smooth;
-          padding: 1rem;
         }
 
         .section {
@@ -32,7 +30,6 @@
           transform: translateY(40px);
           transition: opacity 1s ease, transform 1s ease;
           padding: 2rem 1rem;
-          border-bottom: 1px solid #ddd;
         }
 
         .section.visible {
@@ -58,56 +55,101 @@
         .button:hover {
           background-color: #222;
         }
+
+        /* 🎨 Окремі фони для кожної секції */
+        .section-1 {
+          background: url('photo.jpg') no-repeat center center/cover;
+          color: #fff;
+        }
+
+        .section-2 {
+          background-color: #f5deb3;
+        }
+
+        .section-3 {
+          background-color: #c49e6c;
+        }
+
+        .section-4 {
+          background: url('flowers-bg.jpg') no-repeat center center/cover;
+        }
+        .oval-photo {
+  width: 300px;
+  height: 400px;
+  object-fit: cover; /* щоб фото не спотворювалось */
+  border-radius: 50% / 60%; /* робить форму овальною */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+
+        .section-5 {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .section-5 .bg-video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: -1;
+        }
+
+        .section-5 .video-content {
+          position: relative;
+          z-index: 1;
+          color: #fff;
+          text-align: center;
+        }
     </style>
 </head>
 <body>
-<header class="section">
+
+<header class="section section-1">
     <h1>Ми одружуємось</h1>
     <p>Олена & Константин</p>
+
 </header>
 
-<section class="section">
+<section class="section section-2">
     <h2>Про подію</h2>
     <p>Ніжні слова, коротка історія кохання.</p>
 </section>
 
-<section class="section">
+<section class="section section-3">
     <h2>Де і коли</h2>
     <p>Місце проведення, дата, час.</p>
 </section>
 
-<section class="section">
+<section class="section section-4">
     <h2>Програма</h2>
-    <ul>
-        <li>17:00 — Церемонія</li>
-        <li>18:00 — Вечеря</li>
-        <li>20:00 — Танці</li>
-    </ul>
+    <img src="photo.jpg" alt="Ми разом" class="oval-photo">
 </section>
 
-<footer class="section">
-    <p>Дякуємо за вашу присутність у нашому серці 🤍</p>
-</footer>
+
+<section class="section section-5">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="video_2025-06-12_10-04-10.mp4" type="video/mp4">
+    </video>
+    <div class="video-content">
+        <h2>До зустрічі на святі!</h2>
+    </div>
+</section>
 
 <script>
     const sections = document.querySelectorAll('.section');
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      {
-        threshold: 0.2
-      }
-    );
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
 </script>
+
 </body>
 </html>
