@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Запрошення на весілля</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
     <style>
         * {
           margin: 0;
@@ -59,11 +61,11 @@
 
         .section-1 {
           background: url('Section-1.jpg') no-repeat center center/cover;
-          color: #fff;
+          color: #000;
         }
 
         .section-2 {
-          background-color: #f5deb3;
+          background-color: #F5CBA7;
           }
           .oval-photo {
   width: 150px;
@@ -166,37 +168,41 @@ background-color: #f5deb3;
   transform: rotate(0deg);
 }
 
-<!--/* Текст на гілках */-->
-<!--.small-branch p {-->
-<!--  margin: 0;-->
-<!--  background: rgba(255,255,255,0.9);-->
-<!--  padding: 0.3rem 0.5rem;-->
-<!--  border-radius: 5px;-->
-<!--  box-shadow: 0 2px 5px rgba(0,0,0,0.2);-->
-<!--  white-space: nowrap;-->
-<!--}-->
-
-
-
-
-
-
-
 .section-4 {
-  background: url('Section-5.jpg') no-repeat center center/cover;
-  color: #fff;
+  position: relative;
+  background: url('Section-5.jpg') no-repeat center center / cover;
 }
+
+.section-4::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.35); /* легка світла плівка */
+}
+
+.section-4 h2 {
+  position: relative;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.2rem;
+  color: #0b1c2d;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+
+
 
 
 
 
     </style>
 </head>
+
 <body>
 
 <header class="section section-1">
     <h1>Ми одружуємось</h1>
-    <p>Олена & Константин</p>
+    <p> 24 | 01 | 2026</p>
+    <p>Олена & Костянтин</p>
 
 </header>
 
@@ -215,19 +221,22 @@ background-color: #f5deb3;
         <div class="twig"></div>
 
         <div class="small-branch left" style="top:10%;">
-            <p>💒 Вінчання — 13:30</p>
-        </div>
-        <div class="small-branch right" style="top:25%;">
             <p>Храм Покрови</p>
         </div>
-        <div class="small-branch left" style="top:40%;">
-            <p>м. Бровари, вул. Героїв України, 22А</p>
-        </div>
-        <div class="small-branch right" style="top:60%;">
-            <p>🍷 Банкет — 15:00</p>
-        </div>
-        <div class="small-branch left" style="top:75%;">
+        <div class="small-branch right" style="top:10%;">
             <p>Ресторан «Петрівський Бровар»</p>
+        </div>
+        <div class="small-branch left" style="top:40%;">
+            <p>💒 Вінчання — 13:30</p>
+        </div>
+        <div class="small-branch right" style="top:40%;">
+            <p>🍷 Банкет — 15:00 </p>
+        </div>
+        <div class="small-branch left" style="top:70%;">
+            <p>м. Бровари, вул. Героїв України,22А</p>
+        </div>
+        <div class="small-branch right" style="top:70%;">
+            <p>м.Бровари, Переяславський шлях, 131</p>
         </div>
     </div>
 
